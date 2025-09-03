@@ -1,0 +1,58 @@
+/* TouristGuide.css */
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    background: #f7f9fc;
+}
+
+body > header,
+body > nav,
+body > main,
+body > footer {
+    max-width: 960px;
+}
+
+h1 {
+    margin-bottom: 0.25rem;
+}
+.lead {
+    max-width: 70ch;
+}
+
+section {
+    background: #fff;
+    border: 1px solid #eaeaea;
+    border-radius: 12px;
+    padding: 1rem;
+}
+
+.grid {
+    display: grid;
+    gap: 1rem;
+}
+.grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+@media (min-width: 40em) {
+    .grid {
+        grid-template-columns: 1fr 1.6fr;
+    }
+}
+
+footer.f1 {
+    font-size: 0.85rem;
+    color: #666;
+    text-align: center;
+    border-top: 1px solid #eaeaea;
+    padding: 0.75rem 0 1rem;
+}
+footer.f1 a {
+    color: inherit;
+    text-decoration: underline;
+}
