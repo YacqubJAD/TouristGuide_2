@@ -57,11 +57,9 @@ public class TouristController {
     }
 
     @GetMapping("/{name}/tags")
-    public ResponseEntity<TouristAttraction> getNameTag(String name){
+    public String getNameTag(Model model){
 
-        TouristAttraction nameTag = touristService.getNameTag(name);
-        return new ResponseEntity<>(nameTag, HttpStatus.OK);
-
+        return "tags";
     }
 
     @GetMapping("/{name}/edit")

@@ -14,7 +14,7 @@
     <tr th:each="attraction : ${list}">
         <td th:text="${attraction.name}"></td>
         <td th:text="${attraction.description}"></td>
-        <td><a th:href="@{/attraction/tags}"><button>Tags</button></a></td>
+        <td><a th:href="@{/attraction/{name}(name=${attraction.getName()})/tags}"><button>Tags</button></a></td>
     </tr>
 
 </table>
