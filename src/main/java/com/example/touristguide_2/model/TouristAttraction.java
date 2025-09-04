@@ -7,13 +7,34 @@ public class TouristAttraction {
 private String name;
 private String description;
 private ArrayList<String> tags = new ArrayList<>();
+private String registerBy;
 
-public TouristAttraction(String name, String description){
+public TouristAttraction(String name, String description, String registerBy){
     this.name = name;
     this.description = description;
+    this.registerBy = registerBy;
+
 }
 
-public TouristAttraction(){
+    public ArrayList<String> getTags() {
+        return tags;
+    }
+
+    public void setTags(ArrayList<String> tags) {
+        this.tags = tags;
+    }
+
+
+    public String getRegisterBy() {
+        return registerBy;
+    }
+
+    public void setRegisterBy(String registerBy) {
+        this.registerBy = registerBy;
+    }
+
+
+    public TouristAttraction(){
 }
 
 public String setName(String newName){

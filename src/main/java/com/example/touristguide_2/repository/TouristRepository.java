@@ -11,10 +11,10 @@ public class TouristRepository {
 
     
     public TouristRepository(){
-        attractionList.add(new TouristAttraction("Tivoli", "Dansk forlystelsespark"));
-        attractionList.add(new TouristAttraction("Rundetårn", "Tårn placeret i centrum af København"));
-        attractionList.add(new TouristAttraction("Parken", "Hjem til Danmarks bedste fodboldklub"));
-        attractionList.add(new TouristAttraction("Lille havfrue", "Historisk statue"));
+        attractionList.add(new TouristAttraction("Tivoli",  "Dansk forlystelsespark", "København"));
+        attractionList.add(new TouristAttraction("Rundetårn", "Tårn placeret i centrum af København", "København "));
+        attractionList.add(new TouristAttraction("Parken", "Hjem til Danmarks bedste fodboldklub", "København"));
+        attractionList.add(new TouristAttraction("Lille havfrue","Historisk statue" , "Hvidovre"));
     }
 
     public ArrayList<TouristAttraction> getAll() {
@@ -36,7 +36,8 @@ public class TouristRepository {
     }
 
     public TouristAttraction addAttraction(TouristAttraction attraction) {
-        TouristAttraction newAttraction = new TouristAttraction(attraction.getName(), attraction.getDescription());
+        TouristAttraction newAttraction = new TouristAttraction(attraction.getName(), attraction.getRegisterBy(),
+                                                                attraction.getDescription());
 
         attractionList.add(newAttraction);
         return newAttraction;
