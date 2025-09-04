@@ -1,15 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Tags</title>
+    <link th:href="@{/main.css}" rel="stylesheet">
 </head>
+
 <body>
+<h1 th:text="@{{name} Tag(name=${attraction.name})}"></h1>
 <table>
-    <thead>
+    <tr th:each="tag : ${attraction.tags}">
 
-    </thead>
-
+        <td th:text="${tag}"></td>
+    </tr>
 </table>
 </body>
 </html>

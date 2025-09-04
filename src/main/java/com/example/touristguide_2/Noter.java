@@ -1,7 +1,8 @@
 /*
-1. Færdiggør /add metode og link den med html filen
+1. Gå i gang med add tourist attraktion
 
 2. 
 
+3.
 
  */

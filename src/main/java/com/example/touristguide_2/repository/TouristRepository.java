@@ -4,17 +4,34 @@ import com.example.touristguide_2.model.TouristAttraction;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Repository
 public class TouristRepository {
     ArrayList<TouristAttraction> attractionList = new ArrayList<>();
+    List<String> tagList = new ArrayList<>();
+    List<String> cityList = new ArrayList<>();
 
-    
-    public TouristRepository(){
-        attractionList.add(new TouristAttraction("Tivoli",  "Dansk forlystelsespark", "København"));
-        attractionList.add(new TouristAttraction("Rundetårn", "Tårn placeret i centrum af København", "København "));
-        attractionList.add(new TouristAttraction("Parken", "Hjem til Danmarks bedste fodboldklub", "København"));
-        attractionList.add(new TouristAttraction("Lille havfrue","Historisk statue" , "Hvidovre"));
+    //Virker ikke pga. flere parameter i construktør -tags-
+    public TouristRepository() {
+        attractionList.add(new TouristAttraction("Tivoli", "Dansk forlystelsespark", "København", List.of("Koncert", "Runes tag")));
+        attractionList.add(new TouristAttraction("Rundetårn", "Tårn placeret i centrum af København", "København ", List.of("Koncert", "Yac tag")));
+        attractionList.add(new TouristAttraction("Parken", "Hjem til Danmarks bedste fodboldklub", "København", List.of("Hardcodet tag", "Koncert")));
+        attractionList.add(new TouristAttraction("Lille havfrue", "Historisk statue", "Hvidovre", List.of("Tag test 4", "Hej med dig min ven")));
+
+
+        tagList.add("Underholdning");
+        tagList.add("Koncert");
+        tagList.add("Augusts Tag");
+        tagList.add("Runes tag");
+        tagList.add("Yac tag");
+
+        cityList.add("København");
+        cityList.add("Stenløse");
+        cityList.add("Odense");
+        cityList.add("AAlborg");
+        cityList.add("Randers");
+        cityList.add("Hvidovre");
     }
 
     public ArrayList<TouristAttraction> getAll() {
@@ -23,10 +40,14 @@ public class TouristRepository {
         return attractionList;
     }
 
-    //public ArrayList<TouristAttraction> getAllAttractions() {
-      //  return attractionList;
-    //}
+    public List<String> getTags() {
+        return tagList;
+    }
 
+    public List<String> getCities() {
+
+        return cityList;
+    }
 
     public TouristAttraction getAttractionByName(String name) {
         for (TouristAttraction attraction : attractionList) {
@@ -36,11 +57,9 @@ public class TouristRepository {
     }
 
     public TouristAttraction addAttraction(TouristAttraction attraction) {
-        TouristAttraction newAttraction = new TouristAttraction(attraction.getName(), attraction.getRegisterBy(),
-                                                                attraction.getDescription());
 
-        attractionList.add(newAttraction);
-        return newAttraction;
+        attractionList.add(attraction);
+        return attraction;
     }
 
     public TouristAttraction updateAttractionName(TouristAttraction attraction, String update) {
@@ -56,7 +75,7 @@ public class TouristRepository {
     }
 
     public TouristAttraction deleteAttraction(String name) {
-        if (!(name == null )){
+        if (!(name == null)) {
             TouristAttraction tempAttraction = getAttractionByName(name);
             attractionList.remove(tempAttraction);
 
@@ -66,11 +85,11 @@ public class TouristRepository {
         return null;
     }
 
-    public TouristAttraction updateAttraction(TouristAttraction attraction){
+    public TouristAttraction updateAttraction(TouristAttraction attraction) {
         TouristAttraction tempAttraction = getAttractionByName(attraction.getName());
 
 
-        if(tempAttraction != null){
+        if (tempAttraction != null) {
             //attractionList.remove(tempAttraction);
             tempAttraction.setName(attraction.getName());
             tempAttraction.setDescription(attraction.getDescription());
@@ -87,7 +106,7 @@ public class TouristRepository {
 
     // Find ud af om der kun skal være String name i parameter.
     //Get
-    public TouristAttraction getNameTag(String name){
+    public TouristAttraction getNameTag(String name) {
 
         //lav metoden færdig
         return null;
@@ -95,14 +114,14 @@ public class TouristRepository {
 
     //lav en metode der ændre den enkelte attraction
     //Get
-    public TouristAttraction getEditor(TouristAttraction editor){
+    public TouristAttraction getEditor(TouristAttraction editor) {
 
 
         return null; //dog
     }
 
     //Post
-    public TouristAttraction saveAttraction(TouristAttraction attraction){
+    public TouristAttraction saveAttraction(TouristAttraction attraction) {
 
         //Lav metode færdig.
         return null;
