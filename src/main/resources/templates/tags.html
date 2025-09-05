@@ -7,7 +7,7 @@
 </head>
 
 <body>
-<h1 th:text="@{{name} Tag(name=${attraction.name})}"></h1>
+<h1 th:text="${attraction.name} + ' Tags'"></h1>
 <table>
     <tr th:each="tag : ${attraction.tags}">
 
