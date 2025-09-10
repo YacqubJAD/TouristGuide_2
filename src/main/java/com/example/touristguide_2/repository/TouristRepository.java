@@ -41,10 +41,11 @@ public class TouristRepository {
     }
 
     public List<String> getTags() {
+
         return tagList;
     }
 
-    public List<String> getCities() {
+    public List<String> getCityList() {
 
         return cityList;
     }
@@ -119,12 +120,4 @@ public class TouristRepository {
 
         return null; //dog
     }
-
-    //Post
-    public TouristAttraction saveAttraction(TouristAttraction attraction) {
-
-        //Lav metode færdig.
-        return null;
-    }
-
 }

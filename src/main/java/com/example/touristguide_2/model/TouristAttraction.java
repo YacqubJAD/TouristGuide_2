@@ -8,12 +8,12 @@ public class TouristAttraction {
 private String name;
 private String description;
 private List<String> tags;
-private String registerBy;
+private String city;
 
-public TouristAttraction(String name, String description, String registerBy, List<String> tags){
+public TouristAttraction(String name, String description, String city, List<String> tags){
     this.name = name;
     this.description = description;
-    this.registerBy = registerBy;
+    this.city = city;
     this.tags = tags;
 
 }
@@ -28,11 +28,11 @@ public TouristAttraction(String name, String description, String registerBy, Lis
 
 
     public String getRegisterBy() {
-        return registerBy;
+        return city;
     }
 
     public void setRegisterBy(String registerBy) {
-        this.registerBy = registerBy;
+        this.city = city;
     }
 
 
@@ -55,10 +55,14 @@ public String setDescription(String newDescription){
     return description;
 }
 
+
 public String getDescription(){
+
     return description;
 }
-
+public String getCity(){
+    return city;
+}
 
 
 }

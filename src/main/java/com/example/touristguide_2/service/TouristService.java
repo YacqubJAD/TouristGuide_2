@@ -4,6 +4,7 @@ import com.example.touristguide_2.model.TouristAttraction;
 import com.example.touristguide_2.repository.TouristRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -29,7 +30,7 @@ public class TouristService {
 
         return touristRepository.getAttractionByName(name);
     }
-
+// denne metode er til save
     public TouristAttraction addAttraction(TouristAttraction attraction){
 
         return touristRepository.addAttraction(attraction);
@@ -56,9 +57,8 @@ public class TouristService {
         return touristRepository.getEditor(editor);
     }
 
-    public TouristAttraction saveAttraction(TouristAttraction attraction){
-
-        return touristRepository.saveAttraction(attraction);
+    public List<String> getCityList() {
+        return touristRepository.getCityList();
     }
 }
 

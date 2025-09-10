@@ -1,6 +1,7 @@
 package com.example.touristguide_2.controller;
 
 import com.example.touristguide_2.model.TouristAttraction;
+import com.example.touristguide_2.repository.TouristRepository;
 import com.example.touristguide_2.service.TouristService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,7 +18,6 @@ public class TouristController {
 
     public TouristController(TouristService touristService) {
         this.touristService = touristService;
-
     }
 
     @GetMapping("list") //attraction
@@ -28,32 +28,38 @@ public class TouristController {
     }
 
     @GetMapping("/{name}")
-    public ResponseEntity<TouristAttraction> byName(@PathVariable String name) {
+    public String byName(@PathVariable String name) {
 
         TouristAttraction byName = touristService.getSpecificAttraction(name);
-        return new ResponseEntity<>(byName, HttpStatus.OK);
+        return "";
     }
 
     @GetMapping("/add")
     public String addAttraction(Model model){
         TouristAttraction newAttraction = new TouristAttraction();
 
-        model.addAttribute("addAttraction", newAttraction);
+        model.addAttribute("attraction", newAttraction);
+        model.addAttribute("cityList", touristService.getCityList());
         return "attractionAddForm";
     }
 
-    @PostMapping("/update")
-    public ResponseEntity<TouristAttraction> updateAttraction(@RequestBody TouristAttraction attraction){
+    @PostMapping("/save")
+    public String saveAttraction(TouristAttraction attraction){
+        touristService.addAttraction(attraction);
 
-        TouristAttraction update = touristService.updateAttraction(attraction);
-        return new ResponseEntity<>(update, HttpStatus.OK);
+        return "redirect:/attraction/list";
+    }
+
+    @PostMapping("/update")
+    public String updateAttraction(@RequestBody TouristAttraction attraction){
+        return "";
     }
 
     @PostMapping("/delete/{name}")
-    public ResponseEntity<TouristAttraction> deleteAttraction(@PathVariable String name){
+    public String deleteAttraction(@PathVariable String name){
 
         TouristAttraction delete = touristService.deleteAttraction(name);
-        return new ResponseEntity<>(delete, HttpStatus.OK);
+        return "";
     }
 
     @GetMapping("/{name}/tags")
@@ -63,18 +69,9 @@ public class TouristController {
     }
 
     @GetMapping("/{name}/edit")
-    public ResponseEntity<TouristAttraction> getEditor(TouristAttraction editor){
+    public String getEditor(TouristAttraction editor){
 
         TouristAttraction edit = touristService.getEditor(editor);
-        return new ResponseEntity<>(edit, HttpStatus.OK);
-    }
-
-
-    @PostMapping("/save")
-    public ResponseEntity<TouristAttraction> saveAttraction(TouristAttraction attraction){
-
-        TouristAttraction save = touristService.saveAttraction(attraction);
-        return new ResponseEntity<>(save, HttpStatus.OK);
-
+        return "";
     }
 }
