@@ -9,20 +9,26 @@
 <h1>Tilføj turistattraktion</h1>
 <form action="#" th:action="@{/attraction/save}" th:object="${attraction}" method="post">
     <label>Navn:</label>
-    <input type="text" th:field="*{name}">
+    <label>
+        <input type="text" th:field="*{name}">
+    </label>
     <br>
 
     <label>Beskrivelse:</label>
-    <input type="text" th:field="*{description}">
+    <label>
+        <input type="text" th:field="*{description}">
+    </label>
     <br>
 
     <label>By:</label>
-    <select th:field="*{city}">
-        <option th:each="cityName : ${cityList}"
-                th:value="${cityName}"
-                th:text="${cityName}">
-        </option>
-    </select>
+    <label>
+        <select th:field="*{city}">
+            <option th:each="cityName : ${cityList}"
+                    th:value="${cityName}"
+                    th:text="${cityName}">
+            </option>
+        </select>
+    </label>
     <br>
     <label>Tags:</label>
     

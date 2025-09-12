@@ -4,13 +4,12 @@ import com.example.touristguide_2.model.TouristAttraction;
 import com.example.touristguide_2.repository.TouristRepository;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
 public class TouristService {
 
-    private TouristRepository touristRepository;
+    final private TouristRepository touristRepository;
 
     public TouristService(TouristRepository touristRepository) {
         this.touristRepository = touristRepository;

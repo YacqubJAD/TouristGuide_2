@@ -1,6 +1,5 @@
 package com.example.touristguide_2.model;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class TouristAttraction {
@@ -26,43 +25,44 @@ public TouristAttraction(String name, String description, String city, List<Stri
         this.tags = tags;
     }
 
-
     public String getRegisterBy() {
         return city;
     }
 
-    public void setRegisterBy(String registerBy) {
+    public void setCity(String city) {
         this.city = city;
     }
-
 
     public TouristAttraction(){
 }
 
-public String setName(String newName){
-    name = newName;
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getName(){
     return name;
 }
 
-public String getName(){
-    return name;
-}
 
-public String setDescription(String newDescription){
-    description = newDescription;
+    public void setDescription(String newDescription) {
+        this.description = newDescription;
+    }
 
-    return description;
-}
+//public String setDescription(String newDescription){
+//    description = newDescription;
+//
+//    return description;
+//}
 
 
 public String getDescription(){
 
     return description;
 }
-public String getCity(){
-    return city;
-}
 
-
+    public String getCity() {
+        return city;
+    }
 }
