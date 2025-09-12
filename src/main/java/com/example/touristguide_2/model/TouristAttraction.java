@@ -6,6 +6,9 @@ public class TouristAttraction {
 
 
     //YADIII WAS HEREEEE
+
+    //BRANCH K O M E N T A R HEJ
+
 private String name;
 private String description;
 private List<String> tags;
