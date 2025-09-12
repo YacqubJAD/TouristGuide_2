@@ -31,8 +31,15 @@
     </label>
     <br>
     <label>Tags:</label>
-    
-    <button type="submit">Update</button>
+    <br>
+    <div th:each="tag : ${tagList}">
+        <input type="checkbox" th:field="*{tags}"/>
+        <label th:text="${tag}"></label>
+    </div>
+
+
+    <button type="submit">Add</button>
 </form>
+<a href="/attraction/list"><button>Fortryd</button></a>
 </body>
 </html>

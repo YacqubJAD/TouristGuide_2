@@ -16,9 +16,10 @@ public class TouristService {
 
     }
 
-//    public List<TouristAttraction> getAllTags(){
-//        return touristRepository.
-//    }
+    public List<String> getTags(){
+
+        return touristRepository.getTags();
+    }
 
     public List<TouristAttraction> getAllAttractions() {
 

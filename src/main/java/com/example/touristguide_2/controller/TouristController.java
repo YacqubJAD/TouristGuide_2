@@ -37,6 +37,7 @@ public class TouristController {
 
         model.addAttribute("attraction", newAttraction);
         model.addAttribute("cityList", touristService.getCityList());
+        model.addAttribute("tagList", touristService.getTags());
         return "attractionAddForm";
     }
 
