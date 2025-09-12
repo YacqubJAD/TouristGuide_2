@@ -1,8 +1,8 @@
 /*
-1. Gå i gang med add tourist attraktion
+1. error handeling på add attraction så man ikke kan lave en atraction uden et navn
 
-2. 
+2. vi skal lave update funktion
 
-3.
+3. vi skal lavbe delete funlktion
 
  */
