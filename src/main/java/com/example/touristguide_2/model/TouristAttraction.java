@@ -4,6 +4,8 @@ import java.util.List;
 
 public class TouristAttraction {
 
+
+    //YADIII WAS HEREEEE
 private String name;
 private String description;
 private List<String> tags;
