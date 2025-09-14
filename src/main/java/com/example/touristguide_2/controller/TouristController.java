@@ -27,6 +27,7 @@ public class TouristController {
     }
 
     //Slettet name
+    //Jeg tester lige git, hej drenge.
 
     @GetMapping("/add")
     public String addAttraction(Model model){
