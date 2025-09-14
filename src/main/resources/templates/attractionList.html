@@ -8,13 +8,21 @@
 <body>
 <h1>Tursitattraktioner</h1>
 <table>
-    <th>Name</th>
-    <th>Description</th>
-    <th>Tags</th>
+    <th>Navn</th>
+    <th>Beskrivelse</th>
+    <th></th>
     <tr th:each="attraction : ${list}">
         <td th:text="${attraction.name}"></td>
         <td th:text="${attraction.description}"></td>
-        <td><a th:href="@{/attraction/{name}/tags(name=${attraction.name})}"><button>Tags</button></a></td>
+        <td>
+            <a th:href="@{/attraction/{name}/update(name=${attraction.name})}"><button>Opdater</button></a>
+        </td>
+        <td>
+            <a th:href="@{/attraction/{name}/delete(name=${attraction.name})}"><button>Slet</button></a>
+        </td>
+        <td>
+            <a th:href="@{/attraction/{name}/tags(name=${attraction.name})}"><button>Tags</button></a>
+        </td>
     </tr>
 
 </table>

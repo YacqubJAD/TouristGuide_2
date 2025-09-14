@@ -76,18 +76,7 @@ public class TouristRepository {
         return attraction;
     }
 
-    public TouristAttraction deleteAttraction(String name) {
-        if (!(name == null)) {
-            TouristAttraction tempAttraction = getAttractionByName(name);
-            attractionList.remove(tempAttraction);
-
-            return tempAttraction;
-        }
-
-        return null;
-    }
-
-    public TouristAttraction updateAttraction(TouristAttraction attraction) {
+    public TouristAttraction editAttraction(TouristAttraction attraction) {
         TouristAttraction tempAttraction = getAttractionByName(attraction.getName());
 
 
@@ -104,12 +93,14 @@ public class TouristRepository {
         return null;
     }
 
+    public TouristAttraction deleteAttraction(String name) {
+        if (!(name == null)) {
+            TouristAttraction tempAttraction = getAttractionByName(name);
+            attractionList.remove(tempAttraction);
 
-    //lav en metode der ændre den enkelte attraction
-    //Get
-    public TouristAttraction editAttraction(TouristAttraction attraction) {
+            return tempAttraction;
+        }
 
-
-        return null; //dog
+        return null;
     }
 }

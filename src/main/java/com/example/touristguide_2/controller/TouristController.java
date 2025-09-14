@@ -2,6 +2,8 @@ package com.example.touristguide_2.controller;
 
 import com.example.touristguide_2.model.TouristAttraction;
 import com.example.touristguide_2.service.TouristService;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -60,16 +62,14 @@ public class TouristController {
 
     @PostMapping("/{name}/edit")
     public String editAttraction(TouristAttraction attraction){
-
-        TouristAttraction edit = touristService.editAttraction(attraction);
-        return "";
+        touristService.editAttraction(attraction);
+        return "redirect:/attraction/list";
     }
 
-    @PostMapping("/delete/{name}")
+    @GetMapping("/{name}/delete")
     public String deleteAttraction(@PathVariable String name){
-
-        TouristAttraction delete = touristService.deleteAttraction(name);
-        return "";
+        touristService.deleteAttraction(name);
+        return "redirect:/attraction/list";
     }
 
     @GetMapping("/{name}/tags")
