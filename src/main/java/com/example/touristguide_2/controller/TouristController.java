@@ -17,6 +17,8 @@ public class TouristController {
         this.touristService = touristService;
     }
 
+    //Her er min ændret kode, hej august.
+
     @GetMapping("list") //attraction
     public String getAllAttractions(Model model){
         List<TouristAttraction> attractionList = touristService.getAllAttractions();
