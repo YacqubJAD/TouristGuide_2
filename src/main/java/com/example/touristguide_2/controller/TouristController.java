@@ -17,7 +17,6 @@ public class TouristController {
         this.touristService = touristService;
     }
 
-    //Her er min ændret kode, hej august.
 
     @GetMapping("list") //attraction
     public String getAllAttractions(Model model){
@@ -27,7 +26,6 @@ public class TouristController {
     }
 
     //Slettet name
-    //Jeg tester lige git, hej drenge.
 
     @GetMapping("/add")
     public String addAttraction(Model model){
@@ -46,8 +44,24 @@ public class TouristController {
         return "redirect:/attraction/list";
     }
 
-    @PostMapping("/update")
-    public String updateAttraction(@RequestBody TouristAttraction attraction){
+    //Reminder, Byttet om på update og edit i opgaven.
+    @GetMapping("/{name}/update")
+    public String updateAttraction(@PathVariable String name, Model model){
+        TouristAttraction attraction = touristService.getAttractionByName(name);
+
+        if(attraction == null){
+            throw new IllegalArgumentException("Invalid attraction name");
+        }
+        model.addAttribute("attraction", attraction);
+        model.addAttribute("cityList", touristService.getCityList());
+        model.addAttribute("tagList", touristService.getTags());
+        return "updateAttractionForm";
+    }
+
+    @PostMapping("/{name}/edit")
+    public String editAttraction(TouristAttraction attraction){
+
+        TouristAttraction edit = touristService.editAttraction(attraction);
         return "";
     }
 
@@ -62,12 +76,5 @@ public class TouristController {
     public String getTagInfo(@PathVariable String name, Model model){
         model.addAttribute("attraction", touristService.getSpecificAttraction(name));
         return "tags";
-    }
-
-    @GetMapping("/{name}/edit")
-    public String getEditor(TouristAttraction editor){
-
-        TouristAttraction edit = touristService.getEditor(editor);
-        return "";
     }
 }

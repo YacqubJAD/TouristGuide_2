@@ -52,7 +52,8 @@ public class TouristRepository {
 
     public TouristAttraction getAttractionByName(String name) {
         for (TouristAttraction attraction : attractionList) {
-            if (attraction.getName().equalsIgnoreCase(name)) return attraction;
+            if (attraction.getName().equalsIgnoreCase(name))
+                return attraction;
         }
         return null;
     }
@@ -103,19 +104,10 @@ public class TouristRepository {
         return null;
     }
 
-    /// LAV DISSE TRE METODER OG BIND DEM SAMMEN MED SERVICE OG CONTROLLER.
-
-    // Find ud af om der kun skal være String name i parameter.
-    //Get
-    public TouristAttraction getNameTag(String name) {
-
-        //lav metoden færdig
-        return null;
-    }
 
     //lav en metode der ændre den enkelte attraction
     //Get
-    public TouristAttraction getEditor(TouristAttraction editor) {
+    public TouristAttraction editAttraction(TouristAttraction attraction) {
 
 
         return null; //dog
