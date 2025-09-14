@@ -26,12 +26,7 @@ public class TouristController {
         return "attractionList";
     }
 
-    @GetMapping("/{name}")
-    public String byName(@PathVariable String name) {
-
-        TouristAttraction byName = touristService.getSpecificAttraction(name);
-        return "";
-    }
+    //Slettet name
 
     @GetMapping("/add")
     public String addAttraction(Model model){
