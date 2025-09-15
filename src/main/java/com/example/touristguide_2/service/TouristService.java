@@ -37,29 +37,25 @@ public class TouristService {
 
     }
 
-    public TouristAttraction updateAttraction(TouristAttraction attraction){
-
-        return touristRepository.updateAttraction(attraction);
-    }
-
     public TouristAttraction deleteAttraction(String name) {
 
         return touristRepository.deleteAttraction(name);
     }
 
-    public TouristAttraction getNameTag(String name){
+    public TouristAttraction getAttractionByName(String name){
 
-        return touristRepository.getNameTag(name);
+        return touristRepository.getAttractionByName(name);
     }
 
-    public TouristAttraction getEditor(TouristAttraction editor){
+    public TouristAttraction editAttraction(TouristAttraction attraction){
 
-        return touristRepository.getEditor(editor);
+        return touristRepository.editAttraction(attraction);
     }
 
     public List<String> getCityList() {
         return touristRepository.getCityList();
     }
+
 }
 
 //Connect den med Repo, så den kan connecte til Controlleren.

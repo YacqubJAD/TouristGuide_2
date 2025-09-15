@@ -52,7 +52,8 @@ public class TouristRepository {
 
     public TouristAttraction getAttractionByName(String name) {
         for (TouristAttraction attraction : attractionList) {
-            if (attraction.getName().equalsIgnoreCase(name)) return attraction;
+            if (attraction.getName().equalsIgnoreCase(name))
+                return attraction;
         }
         return null;
     }
@@ -75,18 +76,7 @@ public class TouristRepository {
         return attraction;
     }
 
-    public TouristAttraction deleteAttraction(String name) {
-        if (!(name == null)) {
-            TouristAttraction tempAttraction = getAttractionByName(name);
-            attractionList.remove(tempAttraction);
-
-            return tempAttraction;
-        }
-
-        return null;
-    }
-
-    public TouristAttraction updateAttraction(TouristAttraction attraction) {
+    public TouristAttraction editAttraction(TouristAttraction attraction) {
         TouristAttraction tempAttraction = getAttractionByName(attraction.getName());
 
 
@@ -103,21 +93,14 @@ public class TouristRepository {
         return null;
     }
 
-    /// LAV DISSE TRE METODER OG BIND DEM SAMMEN MED SERVICE OG CONTROLLER.
+    public TouristAttraction deleteAttraction(String name) {
+        if (!(name == null)) {
+            TouristAttraction tempAttraction = getAttractionByName(name);
+            attractionList.remove(tempAttraction);
 
-    // Find ud af om der kun skal være String name i parameter.
-    //Get
-    public TouristAttraction getNameTag(String name) {
+            return tempAttraction;
+        }
 
-        //lav metoden færdig
         return null;
-    }
-
-    //lav en metode der ændre den enkelte attraction
-    //Get
-    public TouristAttraction getEditor(TouristAttraction editor) {
-
-
-        return null; //dog
     }
 }
